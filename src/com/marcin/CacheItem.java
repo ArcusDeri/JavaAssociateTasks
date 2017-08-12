@@ -1,5 +1,4 @@
 package com.marcin;
-import com.marcin.interfaces.CacheView;
 
 public class CacheItem implements com.marcin.interfaces.CacheItem {
     private String Key;

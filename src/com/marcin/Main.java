@@ -3,28 +3,30 @@ package com.marcin;
 public class Main {
 
     public static void main(String[] args) {
-        Cache kesz = new Cache(3);
-        CacheItem lastItem;
+        Cache myCache = new Cache(3);
 
-        lastItem = kesz.cacheItem("A","A");
-        CacheView cv = kesz.getView();
+        myCache.cacheItem("A object","A");
+        CacheView cv = myCache.getView();
         PrintCache(cv);
-        lastItem = kesz.cacheItem("D","D");
+        myCache.cacheItem("D object","D");
         PrintCache(cv);
-        lastItem = kesz.cacheItem("B","B");
+        myCache.cacheItem("B object","B");
         PrintCache(cv);
-        lastItem = kesz.cacheItem("C","C");
+        myCache.cacheItem("C object","C");
         PrintCache(cv);
-        lastItem = kesz.cacheItem("D","D");
+        myCache.cacheItem("D object","D");
         PrintCache(cv);
 
     }
 
     private static void PrintCache(CacheView cv){
-        System.out.println();
-        for (int i = 0; i < cv.size(); i++) {
-            System.out.println(cv.getItem(i).getKey() + " " + cv.getItem(i).getValue());
+        int cacheSize = cv.size();
+        System.out.println("Cache state:");
+        System.out.print("[");
+        for (int i = 0; i < cacheSize; i++) {
+            System.out.print(cv.getItem(i).getKey() + ",");
         }
+        System.out.print("\b]\n");
     }
 
 }
