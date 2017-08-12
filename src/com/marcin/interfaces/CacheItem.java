@@ -1,9 +1,6 @@
 package com.marcin.interfaces;
 
 public interface CacheItem {
-    CacheItem cacheItem(Object item, String key);
-
-    void invalidateCache();
-
-    CacheView getView();
+    String getKey(); // zwraca klucz obiektu
+    Object getValue(); //zwraca obiekt zapisanych w Cache’u
 }
